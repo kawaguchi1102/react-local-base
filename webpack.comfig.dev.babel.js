@@ -21,6 +21,19 @@ export default {
           loader: 'babel-loader'
         },
         include: path.resolve(__dirname, 'src')
+      },
+      {
+        test: /\.css?/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          },
+          { loader: 'sass-loader' }
+        ]
       }
     ]
   }
