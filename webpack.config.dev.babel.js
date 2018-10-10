@@ -31,10 +31,22 @@ export default {
             options: {
               modules: true
             }
-          },
-          { loader: 'sass-loader' }
+          }
         ]
-      }
+      },
+      {
+        test: /\.scss?/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              // オプションでCSS内のurl()メソッドの取り込みを禁止
+              url: false,
+            },
+          }
+        ],
+      },
     ]
   }
 };

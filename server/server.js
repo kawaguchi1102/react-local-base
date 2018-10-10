@@ -1,7 +1,7 @@
 import express from 'express';
 import fs from 'fs';
 import webpack from 'webpack';
-import webpackConfig from '../webpack.comfig.dev.babel';
+import webpackConfig from '../webpack.config.dev.babel';
 import webpackMiddleware from 'webpack-dev-middleware';
 
 const app = express();
