@@ -170,4 +170,3 @@ Temporary Items
 dist/*
 !.gitkeep
 .idea/*
-yarn.lock
