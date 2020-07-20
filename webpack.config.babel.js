@@ -6,7 +6,7 @@ const mode = 'production';
 console.log(`mode: ${mode}`);
 
 export default {
-  mode: mode,
+  mode,
   entry:[
     path.resolve(__dirname, 'src/')
   ],
@@ -21,10 +21,13 @@ export default {
   module:{
     rules:[
       {
-        test: /\.jsx?$/,
-        use:{
-          loader: 'babel-loader'
-        },
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+          }
+        ],
         include: path.resolve(__dirname, 'src')
       },
       {

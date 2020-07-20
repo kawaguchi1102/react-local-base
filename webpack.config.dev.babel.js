@@ -6,7 +6,7 @@ const mode = 'development';
 console.log(`mode: ${mode}`);
 
 export default {
-  mode: mode,
+  mode,
   entry:[
     'webpack-hot-middleware/client',
     path.resolve(__dirname, 'src/')
@@ -25,10 +25,13 @@ export default {
   module:{
     rules:[
       {
-        test: /\.jsx?$/,
-        use:{
-          loader: 'babel-loader'
-        },
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+          }
+        ],
         include: path.resolve(__dirname, 'src')
       },
       {
