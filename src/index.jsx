@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
 
-import App from './App';
+import App from './js/App';
 
 const render = (_App) =>{
   ReactDOM.render(
@@ -12,8 +12,8 @@ const render = (_App) =>{
 };
 
 if(module.hot){
-  module.hot.accept('./App', ()=>{
-    const NextApp = require('./App').default;
+  module.hot.accept('./js/App', ()=>{
+    const NextApp = require('./js/App').default;
     render(NextApp);
   });
 }
