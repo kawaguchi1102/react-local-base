@@ -1,15 +1,15 @@
 import webpack from 'webpack';
 import path from 'path';
 
-const mode = 'development';
+const mode = process.env.NODE_ENV;
 
 console.log(`mode: ${mode}`);
 
-export default {
+const config = {
   mode,
   entry:[
-    'webpack-hot-middleware/client',
-    path.resolve(__dirname, 'src/')
+    'webpack-hot-middleware/client?reload=true&timeout=1000',
+    path.resolve(__dirname, 'src/'),
   ],
   output:{
     path: path.resolve(__dirname, 'public'),
@@ -22,6 +22,7 @@ export default {
   resolve:{
     extensions: ['.js','.json','.jsx']
   },
+  devtool: 'source-map',
   module:{
     rules:[
       {
@@ -62,3 +63,5 @@ export default {
     ]
   }
 };
+
+export default config;

@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 
-const mode = 'production';
+const mode = process.env.NODE_ENV;
 
 console.log(`mode: ${mode}`);
 
