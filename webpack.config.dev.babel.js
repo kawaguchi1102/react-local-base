@@ -3,6 +3,7 @@ import path from 'path';
 
 const mode = process.env.NODE_ENV;
 
+// eslint-disable-next-line no-console
 console.log(`mode: ${mode}`);
 
 const config = {
@@ -50,13 +51,15 @@ const config = {
       {
         test: /\.scss?/,
         use: [
-          'style-loader',
           {
             loader: 'css-loader',
             options: {
               // オプションでCSS内のurl()メソッドの取り込みを禁止
               url: false,
             },
+          },
+          {
+            loader: 'sass-loader'
           }
         ],
       },
