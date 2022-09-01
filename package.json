@@ -3,9 +3,9 @@
   "version": "1.1.0",
   "main": "index.js",
   "scripts": {
-    "client:dev": "NODE_ENV=development babel-node server/server.js",
-    "watch": "NODE_ENV=development babel-watch server/server.js",
-    "build": "NODE_ENV=production webpack"
+    "client:dev": "cross-env NODE_ENV=development babel-node server/server.js",
+    "watch": "cross-env NODE_ENV=development babel-watch server/server.js",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "license": "MIT",
   "devDependencies": {
@@ -16,6 +16,7 @@
     "@babel/register": "^7.11.5",
     "babel-loader": "^8.1.0",
     "babel-watch": "^7.7.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "elliptic": "^6.5.3",
     "eslint": "^8.23.0",
